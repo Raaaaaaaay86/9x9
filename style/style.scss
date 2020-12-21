@@ -1,0 +1,121 @@
+$primary: #2EB738;
+$secondary: #F0F0F0;
+$boxShadow: #D8D8D8;
+
+body {
+  background-color:#F0F0F0;
+}
+
+footer {
+  background-color: $primary;
+  padding: 8px 85px;
+  font-size: 16px;
+  color: white;
+  display: flex;
+  p {
+    margin-left: auto;
+  }
+  @media (max-width: 1024px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.wrapper {
+  padding: 80px 85px;
+  display: flex;
+  flex-direction: column;
+  @media (max-width: 1024px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+.chart {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(350px, 350px));
+  grid-template-rows: repeat(3, minmax(366px, 366px));
+  grid-column-gap: 30px;
+  grid-row-gap: 40px;
+  margin: 0 auto;
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(1, minmax(350px, 350px));
+    grid-column-gap: 15px;
+  }
+}
+
+.color {
+  &--green {
+    color: #2EB738;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  h1 {
+    color: $primary;
+    text-align: center;
+    font-size: 24px;
+    &:first-of-type {
+      font-weight: 800;
+      font-size: 56px;
+      line-height: 84px;
+    }
+  }
+}
+
+.divider {
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  &::before {
+    content: '×';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &::after {
+    content: '×';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  &-line {
+    width: 100%;
+    border-top: 1px solid $primary;
+  }
+}
+
+.multiplication {
+  padding: 65px 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 45px;
+  text-align: center;
+  background: #fff;
+  border-radius: 100px 0px 30px 0px;
+  box-shadow: 0px 3px 10px $boxShadow;
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    p {
+      width: 100%;
+      letter-spacing: 2px;
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+}
+
+.numberTitle {
+  color: #{$primary};
+  font-size: 128px;
+  font-weight: 800;
+  text-shadow: 4px 3px 0px $secondary;
+}
