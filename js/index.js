@@ -1,4 +1,4 @@
-const grid = document.getElementById('grid');
+const chart = document.getElementById('chart');
 
 for (let numberTitle = 2; numberTitle < 10; numberTitle++) {
   let template = `
@@ -15,19 +15,23 @@ for (let numberTitle = 2; numberTitle < 10; numberTitle++) {
     </div>
   </div>`;
 
-  const leftTemplate = [];
-  for (let left = 1; left < 4; left++) {
-    leftTemplate.push(`<p>${numberTitle}×${left}＝${numberTitle * left}</p>`)
-  }
-  const combinedLeftHtml = leftTemplate.join('');
-  template = template.replace('#left', combinedLeftHtml);
+  let leftHTML = '';
+  let rightHTML = '';
 
-  const rightTemplate = [];
-  for (let right = 4; right < 10; right++) {
-    rightTemplate.push(`<p>${numberTitle}×${right}＝${numberTitle * right}</p>`)
+  for (let i = 1; i < 10; i += 1 ) {
+    if (i < 4) {
+      // 左半部: 乘數 1 ~ 3
+      leftHTML += `<p>${numberTitle}×${i}＝${numberTitle * i}</p>`;
+    } else {
+      // 右半部: 乘數 4 ~ 9
+      rightHTML += `<p>${numberTitle}×${i}＝${numberTitle * i}</p>`;
+    }
   }
-  const combinedRightHtml = rightTemplate.join('');
-  template = template.replace('#right', combinedRightHtml)
 
-  grid.insertAdjacentHTML('beforeend', template);
+  // 將各半部的算式貼上錨點，完成一欄組件
+  template = template.replace('#left', leftHTML);
+  template = template.replace('#right', rightHTML);
+
+  // append 到 chart 的最後一個 child 後
+  chart.insertAdjacentHTML('beforeend', template);
 }
