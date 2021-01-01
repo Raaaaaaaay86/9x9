@@ -38,15 +38,10 @@ footer {
   grid-column-gap: 30px;
   grid-row-gap: 40px;
   margin: 0 auto;
+  color:  #2EB738;
   @media (max-width: 1024px) {
     grid-template-columns: repeat(1, minmax(350px, 350px));
     grid-column-gap: 15px;
-  }
-}
-
-.color {
-  &--green {
-    color: #2EB738;
   }
 }
 
@@ -90,7 +85,7 @@ footer {
   }
 }
 
-.multiplication {
+.chartChild {
   padding: 65px 40px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -113,7 +108,7 @@ footer {
   }
 }
 
-.numberTitle {
+.multiplicand {
   color: #{$primary};
   font-size: 128px;
   font-weight: 800;

@@ -1,11 +1,11 @@
 const chart = document.getElementById('chart');
 
-for (let numberTitle = 2; numberTitle < 10; numberTitle++) {
+for (let multiplicand = 2; multiplicand < 10; multiplicand++) {
   let template = `
-  <div class="multiplication">
+  <div class="chartChild">
     <div>
-      <div class="numberTitle">
-        ${numberTitle}
+      <div class="multiplicand">
+        ${multiplicand}
       </div>
       #left
     </div>
@@ -21,10 +21,10 @@ for (let numberTitle = 2; numberTitle < 10; numberTitle++) {
   for (let i = 1; i < 10; i += 1 ) {
     if (i < 4) {
       // 左半部: 乘數 1 ~ 3
-      leftHTML += `<p>${numberTitle}×${i}＝${numberTitle * i}</p>`;
+      leftHTML += `<p>${multiplicand}×${i}＝${multiplicand * i}</p>`;
     } else {
       // 右半部: 乘數 4 ~ 9
-      rightHTML += `<p>${numberTitle}×${i}＝${numberTitle * i}</p>`;
+      rightHTML += `<p>${multiplicand}×${i}＝${multiplicand * i}</p>`;
     }
   }
 
